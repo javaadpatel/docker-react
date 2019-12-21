@@ -8,6 +8,8 @@ RUN npm run build
 
 # Configuration for the run phase (FROM statements terminate each block)
 FROM nginx
+# Tell AWS ElasticBeanstalk which port to open up
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # Default command starts up nginx
 
